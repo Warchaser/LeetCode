@@ -7,8 +7,8 @@ public class Util {
 
     static void logList(ListNode head){
         ListNode node = head;
-        while (node.next != null){
-            System.out.println(node.val + " ");
+        while (node != null){
+            System.out.print(node.val + " ");
             node = node.next;
         }
     }
@@ -29,6 +29,22 @@ public class Util {
             nodes.pop();
         }
         return res;
+    }
+
+    public static ListNode array2NodeList(int[] array){
+        if(array.length == 0){
+            return null;
+        }
+
+        ListNode head = new ListNode(array[0]);
+        ListNode cursor = head;
+
+        for(int i = 1 ; i < array.length ; i++){
+            cursor.next = new ListNode(array[i]);
+            cursor = cursor.next;
+        }
+
+        return head;
     }
 
 }
