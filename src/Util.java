@@ -47,4 +47,8 @@ public class Util {
         return head;
     }
 
+    public static void currentMillis(){
+        System.out.println(System.currentTimeMillis());
+    }
+
 }
