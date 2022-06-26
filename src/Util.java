@@ -1,7 +1,7 @@
 import Bean.ListNode;
+import Bean.TreeNode;
 
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 public class Util {
 
@@ -45,6 +45,35 @@ public class Util {
         }
 
         return head;
+    }
+
+    public static TreeNode arrayToBTree(Integer[] array){
+        if(array.length == 0){
+            return null;
+        }
+        TreeNode root = new TreeNode(array[0]);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        boolean isLeft = true;
+        for(int i = 1; i < array.length; i++){
+            TreeNode node = queue.peek();
+            Integer item = array[i];
+            if(isLeft){
+                if(item != null){
+                    node.left = new TreeNode(item);
+                    queue.offer(node.left);
+                }
+                isLeft = false;
+            } else {
+                if(item != null){
+                    node.right = new TreeNode(item);
+                    queue.offer(node.right);
+                }
+                queue.poll();
+                isLeft = true;
+            }
+        }
+        return root;
     }
 
 }
