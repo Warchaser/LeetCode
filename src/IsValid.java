@@ -1,7 +1,4 @@
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 public class IsValid {
 
@@ -26,6 +23,23 @@ public class IsValid {
                 stack.pop();
             } else {
                 stack.push(character);
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
+    public static boolean isValid2(String s){
+        final Deque<Character> stack = new ArrayDeque<>();
+        for(char c : s.toCharArray()){
+            if(c == '('){
+                stack.offerLast(')');
+            } else if(c == '{'){
+                stack.offerLast('}');
+            } else if(c == '['){
+                stack.offerLast(']');
+            } else if(stack.isEmpty() || stack.pollLast() != c){
+                return false;
             }
         }
 
