@@ -76,7 +76,7 @@ public class Util {
         return root;
     }
 
-    public static void currentMillis(){
+    public static void printCurrentMillis(){
         System.out.println(System.currentTimeMillis());
     }
 

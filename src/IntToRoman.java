@@ -35,8 +35,8 @@ public class IntToRoman {
     }
 
     public static void main(String[] args) {
-        Util.currentMillis();
+        Util.printCurrentMillis();
         System.out.println(intToRoman2(1994));
-        Util.currentMillis();
+        Util.printCurrentMillis();
     }
 }
