@@ -35,7 +35,17 @@ public class ThreeSumClosest {
     public static int threeSumClosest(int[] nums, int target) {
         //先排序
         Arrays.sort(nums);
+
+        int closest = nums[nums.length-1]+nums[nums.length-2]+nums[nums.length-3];
+        if(closest < target){
+            return closest;
+        }
+
         int ans = nums[0] + nums[1] + nums[2];
+        if(ans > target){
+            return ans;
+        }
+
         for(int i = 0; i < nums.length; i++){
             int start = i + 1, end = nums.length - 1;
             while (start < end){
