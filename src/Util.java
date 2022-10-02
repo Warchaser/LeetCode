@@ -80,4 +80,8 @@ public class Util {
         System.out.println(System.currentTimeMillis());
     }
 
+    public static void printArray(int[] array){
+        System.out.println(Arrays.toString(array));
+    }
+
 }
