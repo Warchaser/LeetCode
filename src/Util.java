@@ -84,4 +84,8 @@ public class Util {
         System.out.println(Arrays.toString(array));
     }
 
+    public static <T> void printList(List<T> list){
+        System.out.println(list.toString());
+    }
+
 }
