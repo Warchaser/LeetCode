@@ -1,11 +1,12 @@
+/**
+ * 34. 在排序数组中查找元素的第一个和最后一个位置
+ * 难度
+ * 中等
+ * <a href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/">SearchRange</a>
+ * */
 public class SearchRange {
 
-    /**
-     * 34. 在排序数组中查找元素的第一个和最后一个位置
-     * 难度
-     * 中等
-     * <a href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/">...</a>
-     * */
+
     private static int[] searchRange(int[] nums, int target) {
         int leftIdx = binarySearch(nums, target, true);
         int rightIdx = binarySearch(nums, target, false) - 1;
